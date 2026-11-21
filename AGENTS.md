@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- Video and channel content is static sample data in `src/lib/videos.ts` (no backend yet); thumbnails are Lovable CDN assets referenced via `src/assets/thumbs/*.asset.json`. Why: the user chose a browse-only site with ready-made videos.
+- The app shell (header, side menu) wraps `<Outlet />` in `src/routes/__root.tsx` via `AppShell`. Why: every page shares the same navigation.
