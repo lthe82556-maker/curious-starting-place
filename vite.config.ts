@@ -15,4 +15,21 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  vite: {
+    // Pre-bundle the app's client libraries up front so the dev preview never mixes
+    // old and new optimized chunks (which loads two copies of React and blanks the page).
+    optimizeDeps: {
+      include: [
+        "@radix-ui/react-dialog",
+        "@radix-ui/react-switch",
+        "class-variance-authority",
+        "clsx",
+        "date-fns",
+        "lucide-react",
+        "sonner",
+        "tailwind-merge",
+        "zod",
+      ],
+    },
+  },
 });
